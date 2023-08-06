@@ -3,7 +3,6 @@ import { Tab } from "semantic-ui-react";
 import { RegisterForm, LoginForm } from "../../../components/Admin/Auth";
 import { Icon } from "../../../assets";
 import "./Auth.scss";
-import { set } from "lodash";
 
 export function Auth() {
   const [activeIndex, setActiveIndex] = useState(0);
