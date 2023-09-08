@@ -10,7 +10,9 @@ export function Info() {
   return (
     <div className="footer-info">
       <Icon.LogoWhite className="logo" />
-      <p>Explora mi mundo en línea.</p>
+      <p>
+        Construyendo experiencias digitales excepcionales con el stack MERN.
+      </p>
       {map(socialData, (social) => (
         <Button
           key={social.type}
