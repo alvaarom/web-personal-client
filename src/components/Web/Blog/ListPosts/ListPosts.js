@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Loader, Pagination } from "semantic-ui-react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { map } from "lodash";
 import { Post } from "../../../../api";
 import { ListPostItem } from "../ListPostItem";
@@ -11,12 +12,15 @@ const postController = new Post();
 export function ListPosts() {
   const [posts, setPosts] = useState(null);
   const [pagination, setPagination] = useState();
-  const [page, setPage] = useState(1);
+
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const [page, setPage] = useState(searchParams.get("page") || 1);
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await postController.getPosts(page);
+        const response = await postController.getPosts(page, 9);
         setPosts(response.docs);
         setPagination({
           limit: response.limit,
@@ -33,6 +37,7 @@ export function ListPosts() {
   const changePage = (_, data) => {
     const newPage = data.activePage;
     setPage(newPage);
+    navigate(`?page=${newPage}`);
   };
 
   if (!posts) return <Loader active inline="centered" />;
