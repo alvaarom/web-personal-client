@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
+import { Button, Image } from "semantic-ui-react";
 import { map } from "lodash";
 import { Icon } from "../../../../assets";
 import { socialData } from "../../../../utils";
@@ -9,7 +9,7 @@ import "./Info.scss";
 export function Info() {
   return (
     <div className="footer-info">
-      <Icon.LogoWhite className="logo" />
+      <Image src={Icon.LogoWhite} className="logo" />
       <p>
         Construyendo experiencias digitales excepcionales con el stack MERN.
       </p>

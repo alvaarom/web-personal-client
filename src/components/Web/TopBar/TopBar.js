@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Button } from "semantic-ui-react";
+import { Container, Button, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { map } from "lodash";
 import { Icon } from "../../../assets";
@@ -29,7 +29,7 @@ export function TopBar() {
       <Container>
         <div className="top-bar__left">
           <Link to="/" className="logo">
-            <Icon.LogoWhite />
+            <Image src={Icon.LogoWhite} />
           </Link>
           <div className="menu">
             {map(menu, (item) => (
