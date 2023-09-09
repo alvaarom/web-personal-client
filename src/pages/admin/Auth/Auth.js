@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Tab } from "semantic-ui-react";
+import { Tab, Image } from "semantic-ui-react";
 import { RegisterForm, LoginForm } from "../../../components/Admin/Auth";
 import { Icon } from "../../../assets";
 import "./Auth.scss";
-import { set } from "lodash";
 
 export function Auth() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -33,7 +32,7 @@ export function Auth() {
 
   return (
     <div className="auth">
-      <Icon.LogoWhite className="logo" />
+      <Image src={Icon.LogoWhite} className="logo" />
       <Tab
         panes={panes}
         className="auth__forms"
